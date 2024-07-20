@@ -10,6 +10,6 @@ export type DailyOverviewStat = {
   id: number;
   stat: string;
   value: number;
-  percentageChange: number;
+  change: number;
   platform: string;
 }

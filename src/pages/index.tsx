@@ -28,7 +28,7 @@ export default function Home() {
         <meta name='google' content='notranslate' />
       </Head>
       <Header />
-      <main>
+      <main className='main'>
         <StatsSection />
         <OverviewSection />
       </main>

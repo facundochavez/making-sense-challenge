@@ -9,7 +9,7 @@ const DailyOverviewSection = () => {
       <h2>Overview - Today</h2>
       <div className={styles.overview_section__cards}>
         {dailyOverview.map((overview) => (
-          <OverviewCard key={overview.id} stat={overview} />
+          <OverviewCard key={overview.id} overview={overview} />
         ))}
       </div>
     </section>
