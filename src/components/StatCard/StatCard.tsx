@@ -1,13 +1,17 @@
 import styles from './StatCard.module.scss';
 import { Stat } from '@/types';
-import { formatNumber } from '@/utils/NumberFormatter';
+import { formatNumber } from '@/utils/numberFormatter';
 import Image from 'next/image';
 import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
+import { useModalContext } from '@/context/modal.context';
+import getFollowTerm from '@/utils/followTerm';
 
 const StatCard = ({ stat }: { stat: Stat }) => {
+  const { openModal } = useModalContext();
+
   //// COMPONENT
   return (
-    <div className={styles.stat_card}>
+    <div className={styles.stat_card} onClick={() => openModal(stat.platform)}>
       <div
         className={styles.stat_card__heading_line}
         style={{ background: `var(--${stat.platform}-color` }}
@@ -25,11 +29,11 @@ const StatCard = ({ stat }: { stat: Stat }) => {
 
       <main>
         <p>{formatNumber(stat.value)}</p>
-        <span>{stat.platform === 'youtube' ? 'Subscribers' : 'Followers'}</span>
+        <span>{getFollowTerm(stat.platform)}</span>
       </main>
 
       <footer>
-        <ChangeIndicator change={stat.change} />
+        <ChangeIndicator change={stat.lastTenDays[9]} />
       </footer>
     </div>
   );

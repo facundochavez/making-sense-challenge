@@ -4,27 +4,31 @@
     "platform": "facebook",
     "username": "@nathanf",
     "value": 1987,
-    "change": 12
+    "change": 12,
+    "lastTenDays": [3, 2, 6, 8, 9, 10, 9, 10, 12, 12]
   },
   {
     "id": 2,
     "platform": "twitter",
     "username": "@nathanf",
     "value": 1044,
-    "change": 99
+    "change": 99,
+    "lastTenDays": [56, 85, 76, 90, 110, 71, 115, 111, 110, 99]
   },
   {
     "id": 3,
     "platform": "instagram",
     "username": "@realnathanf",
     "value": 11734,
-    "change": 1099
+    "change": 1099,
+    "lastTenDays": [1005, 1200, 951, 1004, 1148, 1050, 1006, 1024, 845, 1099]
   },
   {
     "id": 4,
     "platform": "youtube",
     "username": "Nathan F.",
     "value": 8239,
-    "change": -144
+    "change": -144,
+    "lastTenDays": [-81, 0, 10, 30, 100, 111, 200, 38, 150, -144]
   }
 ]

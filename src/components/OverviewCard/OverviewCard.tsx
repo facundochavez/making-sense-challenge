@@ -1,13 +1,19 @@
 import Image from 'next/image';
 import styles from './OverviewCard.module.scss';
-import { DailyOverviewStat } from '@/types';
-import { formatNumber } from '@/utils/NumberFormatter';
+import { OverviewStat } from '@/types';
+import { formatNumber } from '@/utils/numberFormatter';
 import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
+import { useModalContext } from '@/context/modal.context';
 
-const OverviewCard = ({ overview }: { overview: DailyOverviewStat }) => {
+const OverviewCard = ({ overview }: { overview: OverviewStat }) => {
+  const { openModal } = useModalContext();
+
   //// COMPONENT
   return (
-    <div className={styles.overview_card}>
+    <div
+      className={styles.overview_card}
+      onClick={() => openModal(overview.platform)}
+    >
       <header>
         <span>{overview.stat}</span>
         <Image

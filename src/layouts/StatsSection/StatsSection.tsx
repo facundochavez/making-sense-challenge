@@ -1,6 +1,9 @@
 import styles from './StatsSection.module.scss';
-import stats from '@/data/stats.data.json';
+import statsData from '@/data/stats.data.json';
 import StatCard from '@/components/StatCard/StatCard';
+import { Stat } from '@/types';
+
+const stats: Stat[] = statsData as Stat[];
 
 const StatsSection = () => {
   //// COMPONENT

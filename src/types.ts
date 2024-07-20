@@ -1,15 +1,17 @@
+export type Platform = 'facebook' | 'twitter' | 'instagram' | 'youtube';
+
 export type Stat = {
   id: number;
-  platform: string;
+  platform: Platform;
   username: string;
   value: number;
-  change: number;
+  lastTenDays: number[]
 };
 
-export type DailyOverviewStat = {
+export type OverviewStat = {
   id: number;
   stat: string;
   value: number;
   change: number;
-  platform: string;
+  platform: Platform;
 }

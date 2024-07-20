@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import Header from '@/layouts/Header/Header';
 import StatsSection from '@/layouts/StatsSection/StatsSection';
 import OverviewSection from '@/layouts/OverviewSection/OverviewSection';
-import DetailsModal from '@/layouts/DetailsModal/DetailsModal';
+import PlatformModal from '@/layouts/PlatformModal/PlatformModal';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -32,7 +32,7 @@ export default function Home() {
         <StatsSection />
         <OverviewSection />
       </main>
-      {/* <DetailsModal /> */}
+      <PlatformModal />
     </div>
   );
 }

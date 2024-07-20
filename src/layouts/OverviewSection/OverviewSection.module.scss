@@ -6,11 +6,15 @@
   gap: 30px;
   margin-top: 15px;
 
-  &__cards {
+  &__cards_container {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
-    row-gap: 25px;
+    row-gap: 15px;
+
+    @media (min-width: 479px) {
+      row-gap: 25px;
+    }
   }
 }
