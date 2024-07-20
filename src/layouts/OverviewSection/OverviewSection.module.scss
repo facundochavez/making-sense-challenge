@@ -1,0 +1,15 @@
+.overview_section {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 15px;
+
+  &__cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "stat": "Page Views",
+    "value": 87,
+    "percentageChange": 3,
+    "platform": "facebook"
+  },
+  {
+    "id": 2,
+    "stat": "Likes",
+    "value": 52,
+    "percentageChange": -2,
+    "platform": "facebook"
+  },
+  {
+    "id": 3,
+    "stat": "Likes",
+    "value": 5462,
+    "percentageChange": 2257,
+    "platform": "instagram"
+  },
+  {
+    "id": 4,
+    "stat": "Profile Views",
+    "value": 52000,
+    "percentageChange": 1375,
+    "platform": "instagram"
+  },
+  {
+    "id": 5,
+    "stat": "Retweets",
+    "value": 117,
+    "percentageChange": 303,
+    "platform": "twitter"
+  },
+  {
+    "id": 6,
+    "stat": "Likes",
+    "value": 507,
+    "percentageChange": 553,
+    "platform": "twitter"
+  },
+  {
+    "id": 7,
+    "stat": "Likes",
+    "value": 107,
+    "percentageChange": -19,
+    "platform": "youtube"
+  },
+  {
+    "id": 8,
+    "stat": "Total Views",
+    "value": 1407,
+    "percentageChange": -12,
+    "platform": "youtube"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "platform": "facebook",
+    "username": "@nathanf",
+    "value": 1987,
+    "change": 12
+  },
+  {
+    "id": 2,
+    "platform": "twitter",
+    "username": "@nathanf",
+    "value": 1044,
+    "change": 99
+  },
+  {
+    "id": 3,
+    "platform": "instagram",
+    "username": "@realnathanf",
+    "value": 11734,
+    "change": 1099
+  },
+  {
+    "id": 4,
+    "platform": "youtube",
+    "username": "Nathan F.",
+    "value": 8239,
+    "change": -144
+  }
+]
