@@ -70,6 +70,8 @@ body {
 
 .ant-modal {
   font-family: 'Inter', sans-serif;
+  width: 90% !important;
+  max-width: 1000px !important;
 }
 
 .ant-modal-content {

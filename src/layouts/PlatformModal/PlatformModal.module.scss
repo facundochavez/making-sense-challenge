@@ -1,6 +1,6 @@
 .platform_modal {
   header {
-    background-color: aquamarine;
+    background-color: white;
     position: absolute;
     top: 0;
     left: 0;
@@ -29,13 +29,12 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      column-gap: 15px;
 
       section {
         width: fit-content;
         display: flex;
-        gap: 10px;
-        background-color: orange;
+        gap: 12px;
 
         p {
           font-weight: 700;

@@ -6,6 +6,7 @@ import statsData from '@/data/stats.data.json';
 import getFollowTerm from '@/utils/followTerm';
 import { Stat } from '@/types';
 import { formatNumber } from '@/utils/numberFormatter';
+import ChangeIndicator from '@/components/ChangeIndicator/ChangeIndicator';
 const stats: Stat[] = statsData as Stat[];
 
 const PlatformModal = () => {
@@ -53,11 +54,13 @@ const PlatformModal = () => {
               <span style={{ maxWidth: '80px' }}>Total {followTerm}</span>
             </section>
             <section>
-              <p>{FOLLOWERS_SUM}</p>
-              <span style={{ maxWidth: '130px' }}>New {followTerm} in the past 10 days</span>
+              <ChangeIndicator change={FOLLOWERS_SUM} isBig />
+              <span style={{ maxWidth: '130px', minWidth: '115px' }}>
+                New {followTerm} in the past 10 days
+              </span>
             </section>
             <section>
-              <p>{stat.lastTenDays[9]}</p>
+              <ChangeIndicator change={stat.lastTenDays[9]} isBig />
               <span style={{ maxWidth: '115px' }}>New {followTerm} TODAY</span>
             </section>
           </main>
