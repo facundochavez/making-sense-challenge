@@ -16,19 +16,19 @@ const inter = Inter({ subsets: ['latin'] });
 const PlatformModal = () => {
   // Extract modal context values
   const { isModalOpen, closeModal, activePlatform } = useModalContext();
-  
+
   // Find the stat corresponding to the active platform
   const stat: Stat | undefined = stats.find(
     (stat) => stat.platform === activePlatform
   );
-  
+
   // Return null if no stat is found
   if (!stat) return null;
-  
+
   // Get term and date range for the active platform
   const followersTerm = getFollowersTerm(activePlatform);
   const dateRange = getDateRange();
-  
+
   // Calculate total followers over the last ten days
   const FOLLOWERS_SUM = stat.lastTenDays.reduce((sum, day) => sum + day, 0);
 
@@ -42,10 +42,12 @@ const PlatformModal = () => {
     >
       <header>
         <h2>
-          {stat.platform.charAt(0).toUpperCase() +
-            stat.platform.slice(1) +
-            ' ' +
-            followersTerm}
+          {stat.platform === 'youtube'
+            ? 'YouTube'
+            : stat.platform.charAt(0).toUpperCase() +
+              stat.platform.slice(1) +
+              ' ' +
+              followersTerm}
         </h2>
         <span>
           <Image
