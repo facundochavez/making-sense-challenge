@@ -15,4 +15,3 @@ const formatNumber = (num: number): string => {
 };
 
 export default formatNumber;
-
