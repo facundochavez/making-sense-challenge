@@ -4,7 +4,7 @@
 
 ## Aplicación desplegada en Vercel
 
-[Ir al sitio](making-sense-challenge-fch.vercel.app)
+[Ir al sitio](https://making-sense-challenge-fch.vercel.app)
 
 ## Decisión de Tecnologías
 
