@@ -6,12 +6,13 @@ import { Stat } from '@/types';
 const stats: Stat[] = statsData as Stat[];
 
 const StatsSection = () => {
-  //// COMPONENT
   return (
     <section className={styles.stats_section}>
-      {stats.map((stat) => (
-        <StatCard key={stat.id} stat={stat} />
-      ))}
+      <ul>
+        {stats.map((stat, index) => (
+          <StatCard key={stat.id} index={index} stat={stat} />
+        ))}
+      </ul>
     </section>
   );
 };

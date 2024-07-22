@@ -3,16 +3,17 @@ import styles from './OverviewCard.module.scss';
 import { OverviewStat } from '@/types';
 import { formatNumber } from '@/utils/numberFormatter';
 import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
-import { useModalContext } from '@/context/modal.context';
+import { useModalContext } from '@/context/Modal.context';
 
-const OverviewCard = ({ overview }: { overview: OverviewStat }) => {
+const OverviewCard = ({index, overview }: { index: number; overview: OverviewStat }) => {
+  // Extract modal context values
   const { openModal } = useModalContext();
 
-  //// COMPONENT
   return (
-    <div
+    <li
       className={styles.overview_card}
       onClick={() => openModal(overview.platform)}
+      style={{ animationDelay: `${index * 0.05}s` }}
     >
       <header>
         <span>{overview.stat}</span>
@@ -27,7 +28,7 @@ const OverviewCard = ({ overview }: { overview: OverviewStat }) => {
         <p>{formatNumber(overview.value)}</p>
         <ChangeIndicator change={overview.change} isPercentage />
       </footer>
-    </div>
+    </li>
   );
 };
 

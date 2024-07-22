@@ -11,7 +11,6 @@ const ChangeIndicator = ({
   isPercentage?: boolean;
   isBig?: boolean;
 }) => {
-  //// COMPONENT
   return (
     <div className={styles.change_indicator}>
       <Image

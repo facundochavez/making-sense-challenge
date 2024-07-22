@@ -1,50 +1,115 @@
 .platform_modal {
+  color: var(--foreground);
+
   header {
-    background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-color: var(--top-background-pattern);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
     border-radius: 15px 15px 0 0;
-    padding: 30px 40px;
+    padding: 30px;
+    padding-bottom: 0px;
+
+    @media (min-width: 550px) {
+      padding: 35px 50px;
+      padding-bottom: 0px;
+    }
 
     h2 {
       font-weight: 700 !important;
       font-size: 25px !important;
       line-height: 1.2;
+      margin-right: 30px;
     }
 
     span {
+      color: var(--foreground-pale);
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 700;
     }
 
-    main {
+    section {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      column-gap: 15px;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
 
-      section {
-        width: fit-content;
+      &::-webkit-scrollbar {
+        height: 5px;
+        margin-bottom: 5px;
+        padding-right: 20px;
+
+        &-thumb {
+          background-color: var(--thumbnail);
+          border-radius: 3px;
+        }
+      }
+
+      ul {
         display: flex;
-        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 25px;
+        padding: 25px 0;
+        padding-right: 20px;
+        min-width: max-content;
 
-        p {
-          font-weight: 700;
-          font-size: 40px;
+        li {
+          width: fit-content;
+          display: flex;
+          gap: 12px;
+
+          p {
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 1.2;
+          }
+
+          span {
+            color: var(--foreground);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    padding: 0 30px 30px 30px;
+
+    @media (min-width: 550px) {
+      padding: 0 50px 50px 50px;
+    }
+
+    h3 {
+      color: var(--foreground-pale);
+      font-weight: 400;
+      font-size: 20px;
+      padding: 25px 0;
+    }
+
+    section {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 5px;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+
+        &-thumb {
+          background-color: var(--thumbnail);
+          border-radius: 3px;
         }
 
-        span {
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 1.2;
+        &-button {
+          height: 50px;
+          width: 50px;
         }
       }
     }

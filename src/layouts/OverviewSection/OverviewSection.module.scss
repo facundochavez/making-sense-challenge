@@ -6,7 +6,15 @@
   gap: 30px;
   margin-top: 15px;
 
-  &__cards_container {
+  h2 {
+    color: var(--foreground-pale);
+  }
+
+  h2.dark {
+    color: var(--foreground);
+  }
+
+  ul {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

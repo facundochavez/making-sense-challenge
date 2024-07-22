@@ -8,26 +8,23 @@ interface ModalContextProps {
   activePlatform: Platform;
 }
 
-export const ModalContext = createContext<ModalContextProps | undefined>(
-  undefined
-);
+const ModalContext = createContext<ModalContextProps | undefined>(undefined);
 
 interface ModalProviderProps {
   children: JSX.Element | JSX.Element[];
 }
 
 const ModalProvider = ({ children }: ModalProviderProps) => {
+  // Define modal and platform state
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [activePlatform, setActivePlatform] = useState<Platform>('facebook');
 
+  // Define funcions to open and close the modal
   const openModal = (platform: Platform) => {
     setActivePlatform(platform);
     setIsModalOpen(true);
   };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <ModalContext.Provider
@@ -44,6 +41,7 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 };
 
 export const useModalContext = (): ModalContextProps => {
+  // Define context and throw error if not found
   const context = useContext(ModalContext);
   if (!context) {
     throw new Error('useModalContext must be used within a ModalProvider');

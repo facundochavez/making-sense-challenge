@@ -3,18 +3,22 @@ import { Stat } from '@/types';
 import { formatNumber } from '@/utils/numberFormatter';
 import Image from 'next/image';
 import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
-import { useModalContext } from '@/context/modal.context';
-import getFollowTerm from '@/utils/followTerm';
+import { useModalContext } from '@/context/Modal.context';
+import getFollowersTerm from '@/utils/followersTerm';
 
-const StatCard = ({ stat }: { stat: Stat }) => {
+const StatCard = ({ index, stat }: { index: number; stat: Stat }) => {
+  // Extract modal context values
   const { openModal } = useModalContext();
 
-  //// COMPONENT
   return (
-    <div className={styles.stat_card} onClick={() => openModal(stat.platform)}>
+    <li className={styles.stat_card} onClick={() => openModal(stat.platform)} style={{ animationDelay: `${index * 0.1}s` }}>
       <div
         className={styles.stat_card__heading_line}
-        style={{ background: `var(--${stat.platform}-color` }}
+        style={{
+          background: `var(--${stat.platform}-color${
+            stat.platform === 'instagram' ? '-gradient' : ''
+          }`,
+        }}
       />
 
       <header>
@@ -29,13 +33,13 @@ const StatCard = ({ stat }: { stat: Stat }) => {
 
       <main>
         <p>{formatNumber(stat.value)}</p>
-        <span>{getFollowTerm(stat.platform)}</span>
+        <span>{getFollowersTerm(stat.platform)}</span>
       </main>
 
       <footer>
         <ChangeIndicator change={stat.lastTenDays[9]} />
       </footer>
-    </div>
+    </li>
   );
 };
 

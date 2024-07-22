@@ -1,40 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Aplicación desplegada en Vercel
 
-## Getting Started
+[Ver sitio en vivo](https://www.making-sense-challenge.vercel.app)
 
-First, run the development server:
+## Decisión de Tecnologías
 
+- Aunque este proyecto es pequeño, elegí trabajar con **Next.js** y **TypeScript** para simular un proyecto a mayor escala. Para proyectos más simples, se podrían usar tecnologías como **Astro** sin TypeScript.
+
+- **Librerías Utilizadas:**
+  - **Ant Design**: Para el Switch y el Modal, aprovechando sus animaciones.
+  - **Recharts**: Para la creación de gráficos.
+  - **Date-fns**: Para el formato de fechas.
+  - **Next-themes**: Para la gestión de temas.
+
+- Por practicidad y familiaridad (y para evitar Tailwind), utilicé **SCSS modular** para el estilado.
+
+## Lectura del Prototipo y Estructura del Repositorio
+
+- Importé las imágenes del prototipo en Illustrator y ajusté el ancho del layout principal a 1440px según la guía de estilos. Esto me permitió deducir con precisión el tamaño de los componentes, paddings, márgenes, etc.
+
+- Organicé los componentes en carpetas:
+  - **Componentes Grandes** (e.g., Header, secciones completas) en `src/layouts`.
+  - **Componentes Pequeños Reutilizables** (e.g., Cards) en `src/components`.
+  - Nota: "layouts" se refiere a componentes contenedores internos, no a contenedores globales de páginas.
+
+- Copié los assets (favicon e íconos) a la carpeta `public`, creando una subcarpeta `icons`.
+
+- Creé archivos JSON en `src/data` basados en `content.tx` y definí los tipos en `src/types.ts`.
+
+- Definí las variables de colores para los temas Light y Dark en `src/styles/global.css`.
+
+## Construcción
+
+- Hice que el componente raíz `Home` devolviera un `div` para aplicar la fuente Inter a todos los componentes internos. Aunque Next.js añade fuentes en el `<main>` por defecto, utilicé un `div` general para envolver los layouts como el Header.
+
+- Personalicé el `<Head>` de Next.js con la información específica del proyecto para SEO.
+
+- Estructuré el body importando los layouts en `index` y construyendo cada uno de ellos y sus componentes internos.
+
+- Para los componentes de librerías (e.g., Modal de AntD), creé un componente envoltorio. Por ejemplo, en `src/layouts/PlatformModal`, importo el Modal de Ant Design como `AntModal` y personalizo sus propiedades.
+
+- Creé funciones reutilizables en la carpeta `utils`:
+  - `numberFormatter` para representar números grandes con "M" o "k".
+  - `getChartData` para simular datos de los últimos 10 días.
+
+- Usé principios de código atómico para evitar `classNames` anidados y escribí HTML semántico. Para proyectos más complejos, prefiero usar BEM con SCSS Modules, por ejemplo: `className={styles.wrapper__cards_container__card}`.
+
+- Aseguré la adaptabilidad cambiando paddings, márgenes y `grid-column-template` con media queries para mantener una apariencia óptima en todos los tamaños.
+
+- Aplicar TypeScript ayudó especialmente a definir los tipos de plataformas, asegurando coherencia con los datos.
+
+- El diseño del proyecto es escalable. Para agregar una nueva plataforma (e.g., TikTok), solo es necesario:
+  - Agregarla a los datos.
+  - Cargar su ícono en `src/public/icons`.
+  - Definir su color en `src/globals.css`.
+  - Actualizar su tipo en `src/types.ts`.
+  - Realizar ajustes mínimos en el grid del Hero.
+
+- Utilicé **next-themes** para manejar el cambio de tema. Implementé `useEffect` y un estado `mounted` en la raíz (app) para evitar problemas de hidratación y asegurar el reconocimiento correcto del tema.
+
+- Implementé animaciones usando propiedades nativas de CSS.
+
+- Documenté el código en inglés para mantener consistencia y claridad.
+
+## Instrucciones de Instalación
+
+**1. Instalar Dependencias:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+npm i

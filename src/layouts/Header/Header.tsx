@@ -1,9 +1,8 @@
 import styles from './Header.module.scss';
 import ModeToggle from '@/components/ModeToggle/ModeToggle';
-import getTotalFollowers from '@/utils/TotalFollowers';
+import getTotalFollowers from '@/utils/totalFollowers';
 
 const Header = () => {
-  //// COMPONENT
   return (
     <header className={styles.header}>
       <div className={styles.header__max_width}>
