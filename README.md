@@ -1,3 +1,7 @@
+## Making Sense Challenge
+
+![Captura de pantalla 2024-07-22 161909](https://github.com/user-attachments/assets/14e832d0-8623-4cc3-ba35-2424d3f3ef2c)
+
 ## Aplicación desplegada en Vercel
 
 [Ir al sitio](https://www.making-sense-challenge.vercel.app)
@@ -64,15 +68,20 @@
 
 ## Instrucciones de Instalación
 
-**1. Instalar Dependencias:**
+**1. Clonar el repositorio desde GitHub:**
+```bash
+git clone https://github.com/facundochavez/making-sense-challenge/
+```
+
+**2. Instalar Dependencias:**
 ```bash
 npm i
 ```
 
-**2. Correr el development server:**
+**3. Correr el development server:**
 ```bash
 npm run dev
 ```
 
-**3. Abrir en el navegador:**
+**4. Abrir en el navegador:**
 [http://localhost:3000](http://localhost:3000)
