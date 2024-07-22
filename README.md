@@ -1,3 +1,7 @@
+## Making Sense Challenge
+
+![Captura de pantalla 2024-07-22 161909](https://github.com/user-attachments/assets/14e832d0-8623-4cc3-ba35-2424d3f3ef2c)
+
 ## Aplicación desplegada en Vercel
 
 [Ir al sitio](https://www.making-sense-challenge.vercel.app)
