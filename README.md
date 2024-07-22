@@ -7,21 +7,21 @@
 - Aunque este proyecto es pequeño, elegí trabajar con **Next.js** y **TypeScript** para simular un proyecto a mayor escala. Para proyectos más simples, se podrían usar tecnologías como **Astro** sin TypeScript.
 
 - **Librerías Utilizadas:**
-  - **Ant Design**: Para el Switch y el Modal, aprovechando sus animaciones.
+  - **Ant Design**: Para el Switch y el Modal, sobre todo me gustan sus animaciones.
   - **Recharts**: Para la creación de gráficos.
   - **Date-fns**: Para el formato de fechas.
   - **Next-themes**: Para la gestión de temas.
 
-- Por practicidad y familiaridad (y para evitar Tailwind), utilicé **SCSS modular** para el estilado.
+- Por practicidad y familiaridad (y como se especificaba evitar Tailwind), utilicé **SCSS modular** para el estilado.
 
 ## Lectura del Prototipo y Estructura del Repositorio
 
-- Importé las imágenes del prototipo en Illustrator y ajusté el ancho del layout principal a 1440px según la guía de estilos. Esto me permitió deducir con precisión el tamaño de los componentes, paddings, márgenes, etc.
+- Importé las imágenes del prototipo en Illustrator y ajusté el ancho del layout principal a 1440px según la guía de estilos. Esto me permitió deducir con el tamaño de los componentes, paddings, márgenes, etc.
 
 - Organicé los componentes en carpetas:
-  - **Componentes Grandes** (e.g., Header, secciones completas) en `src/layouts`.
-  - **Componentes Pequeños Reutilizables** (e.g., Cards) en `src/components`.
-  - Nota: "layouts" se refiere a componentes contenedores internos, no a contenedores globales de páginas.
+  - **Componentes Grandes** (como el Header y secciones completas) en `src/layouts`.
+  - **Componentes Pequeños Reutilizables** (como los Cards) en `src/components`.
+  - Nota: no estoy utilizando el App Route, por lo que "layouts" no se refiere a contenedores globales de páginas, sino a componentes contenedores utilizados dentro del body.
 
 - Copié los assets (favicon e íconos) a la carpeta `public`, creando una subcarpeta `icons`.
 
@@ -33,37 +33,44 @@
 
 - Hice que el componente raíz `Home` devolviera un `div` para aplicar la fuente Inter a todos los componentes internos. Aunque Next.js añade fuentes en el `<main>` por defecto, utilicé un `div` general para envolver los layouts como el Header.
 
-- Personalicé el `<Head>` de Next.js con la información específica del proyecto para SEO.
+- Customicé el `<Head>` de Next.js con la información específica del proyecto para SEO.
 
-- Estructuré el body importando los layouts en `index` y construyendo cada uno de ellos y sus componentes internos.
+- Estructuré el body importando los layouts en `index.tsx` y fui construyendo cada uno de ellos y sus componentes internos. Por defecto utilizo una extensión de VSCode llamada Folder Templates que acelera bastante este proceso.
 
-- Para los componentes de librerías (e.g., Modal de AntD), creé un componente envoltorio. Por ejemplo, en `src/layouts/PlatformModal`, importo el Modal de Ant Design como `AntModal` y personalizo sus propiedades.
+- Cuando utilizo componentes customizables de librerías como Ant Design, me gusta crear un nuevo componente como una instancia del primero. De esta manera, si quiero tener mi propio `<Modal />`, lo creo como tal y dentro del mismo importo el Modal de Ant Design "as AntModal". Luego, retorno este componente ya con sus propiedades customizadas. Un ejemplo de esto es el archivo `src/layouts/PlatformModal`.
 
-- Creé funciones reutilizables en la carpeta `utils`:
-  - `numberFormatter` para representar números grandes con "M" o "k".
-  - `getChartData` para simular datos de los últimos 10 días.
+- Creé varias funciones que necesitaba reutilizar en la carpeta `scrc/utils`. Por ejemplo, `numberFormatter`, para representar con una M o una K los números mayores al millón o a diez mil respectivamente (el valor 9999 es el máximo que puede representarse sin comprometer el ancho de las tarjetas). También, para simular que la data viene con un registro de fechas de los últimos 10 días, creé la función `getCharData` que deduce una nueva data con fechas a partir de la data de origen, la cual mantuve simple con un array de números que representan los followers de los últimos 10 días.
 
-- Usé principios de código atómico para evitar `classNames` anidados y escribí HTML semántico. Para proyectos más complejos, prefiero usar BEM con SCSS Modules, por ejemplo: `className={styles.wrapper__cards_container__card}`.
+- Como el proyecto es relativamente simple, tener un código atómico me permitió no tener `classNames` anidados y escribir HTML semántico. Si no fuera el caso, por lo general utilizo el estilo BEM combinado con SCSS Modules, algo así: `className={styles.wrapper__cards_container__card}`
 
-- Aseguré la adaptabilidad cambiando paddings, márgenes y `grid-column-template` con media queries para mantener una apariencia óptima en todos los tamaños.
+- Algo importante fue cuidar el aspecto general al cambiar el tamaño de la pantalla. Para ello ajusté con media queries los paddings, margins y grid-column-template para mantener la mejor apariencia en todos los tamaños.
 
 - Aplicar TypeScript ayudó especialmente a definir los tipos de plataformas, asegurando coherencia con los datos.
 
-- El diseño del proyecto es escalable. Para agregar una nueva plataforma (e.g., TikTok), solo es necesario:
-  - Agregarla a los datos.
+- El diseño del proyecto es escalable. Para agregar una nueva plataforma (por ejemplo, TikTok), solo es necesario:
+  - Sumar esta plataforma a la data de `src/data`.
   - Cargar su ícono en `src/public/icons`.
   - Definir su color en `src/globals.css`.
-  - Actualizar su tipo en `src/types.ts`.
-  - Realizar ajustes mínimos en el grid del Hero.
+  - Incluir su tipo en `src/types.ts`.
+  - Realizar ajustes mínimos en el grid del Hero y ya funcionaría sin tener que retocar cosas en el Modal ni en los Cards.
 
-- Utilicé **next-themes** para manejar el cambio de tema. Implementé `useEffect` y un estado `mounted` en la raíz (app) para evitar problemas de hidratación y asegurar el reconocimiento correcto del tema.
+- Para que **Next-themes** funcione correctamente, implementé un estado `mounted` en la raíz (app) y así evitié problemas de hidratación.
 
 - Implementé animaciones usando propiedades nativas de CSS.
 
-- Documenté el código en inglés para mantener consistencia y claridad.
+- Opiné el código en inglés y a discresión, tanto los componentes como las funciones en `scr/utils`. Puede resultar un poco redundante porque las funciones y variables ya se encuentran bien nombradas, pero preferí no dar nada por sentado.
 
 ## Instrucciones de Instalación
 
 **1. Instalar Dependencias:**
 ```bash
 npm i
+```
+
+**2. Correr el development server:**
+```bash
+npm run dev
+```
+
+**3. Abrir en el navegador:**
+[http://localhost:3000](http://localhost:3000)
