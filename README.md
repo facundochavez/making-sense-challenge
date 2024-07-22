@@ -1,6 +1,6 @@
 ## Aplicación desplegada en Vercel
 
-[Ver sitio en vivo](https://www.making-sense-challenge.vercel.app)
+[Ir al sitio](https://www.making-sense-challenge.vercel.app)
 
 ## Decisión de Tecnologías
 
