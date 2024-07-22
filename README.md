@@ -64,7 +64,7 @@
 
 ## Instrucciones de Instalación
 
-**1. Clonae el repositorio desde GitHub:**
+**1. Clonar el repositorio desde GitHub:**
 ```bash
 git clone https://github.com/facundochavez/making-sense-challenge/
 ```
