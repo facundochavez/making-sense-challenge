@@ -7,10 +7,18 @@
   --instagram-color: hsl(329, 70%, 58%);
   --youtube-color: hsl(348, 97%, 39%);
   --instagram-color-gradient: linear-gradient(
+    to bottom,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+
+  @media (min-width: 565px) {
+    --instagram-color-gradient: linear-gradient(
     to right,
     hsl(37, 97%, 70%),
     hsl(329, 70%, 58%)
   );
+  }
 
   /* LIGHT THEME */
   --background: hsl(0, 0%, 100%);
@@ -45,6 +53,16 @@ html.dark {
     hsl(210, 78%, 56%),
     hsl(146, 68%, 55%)
   );
+}
+
+@media (min-width: 565px) {
+  :root {
+    --instagram-color-gradient: linear-gradient(
+      to right,
+      hsl(37, 97%, 70%),
+      hsl(329, 70%, 58%)
+    );
+  }
 }
 
 /* GLOBAL STYLES */

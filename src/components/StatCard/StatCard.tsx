@@ -11,7 +11,11 @@ const StatCard = ({ index, stat }: { index: number; stat: Stat }) => {
   const { openModal } = useModalContext();
 
   return (
-    <li className={styles.stat_card} onClick={() => openModal(stat.platform)} style={{ animationDelay: `${index * 0.1}s` }}>
+    <li
+      className={styles.stat_card}
+      onClick={() => openModal(stat.platform)}
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
       <div
         className={styles.stat_card__heading_line}
         style={{
@@ -22,13 +26,18 @@ const StatCard = ({ index, stat }: { index: number; stat: Stat }) => {
       />
 
       <header>
-        <Image
-          src={`/icons/icon-${stat.platform}.svg`}
-          alt={stat.platform}
-          width={20}
-          height={20}
-        />
-        <p>{stat.username}</p>
+        <aside>
+          <Image
+            src={`/icons/icon-${stat.platform}.svg`}
+            alt={stat.platform}
+            width={20}
+            height={20}
+          />
+          <p>{stat.username}</p>
+        </aside>
+        <div>
+          <ChangeIndicator change={stat.lastTenDays[9]} />
+        </div>
       </header>
 
       <main>

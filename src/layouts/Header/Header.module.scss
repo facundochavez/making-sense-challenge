@@ -11,9 +11,14 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 50px;
+    gap: 10px;
 
-    @media (min-width: 550px) {
+
+    @media (min-width: 400px) {
+      gap: 50px;
+    }
+
+    @media (min-width: 565px) {
       align-items: center;
     }
 
@@ -21,6 +26,11 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
+      margin-top: -4px;
+
+      @media (min-width: 565px) {
+        margin-top: 0;
+      }
 
       h1 {
         font-weight: 700;
