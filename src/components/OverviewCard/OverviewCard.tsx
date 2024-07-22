@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './OverviewCard.module.scss';
 import { OverviewStat } from '@/types';
-import { formatNumber } from '@/utils/numberFormatter';
+import formatNumber from '@/utils/numberFormatter';
 import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
 import { useModalContext } from '@/context/Modal.context';
 

@@ -1,4 +1,4 @@
-import { formatNumber } from '@/utils/numberFormatter';
+import formatNumber from '@/utils/numberFormatter';
 import styles from './ChangeIndicator.module.scss';
 import Image from 'next/image';
 

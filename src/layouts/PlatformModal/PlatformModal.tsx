@@ -6,7 +6,7 @@ import statsData from '@/data/stats.data.json';
 import getFollowersTerm from '@/utils/followersTerm';
 import getDateRange from '@/utils/dateRange';
 import { Stat } from '@/types';
-import { formatNumber } from '@/utils/numberFormatter';
+import formatNumber from '@/utils/numberFormatter';
 import ChangeIndicator from '@/components/ChangeIndicator/ChangeIndicator';
 import FollowersChart from '@/components/FollowersChart/FollowersChart';
 const stats: Stat[] = statsData as Stat[];

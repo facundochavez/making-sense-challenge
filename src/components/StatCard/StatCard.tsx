@@ -1,6 +1,6 @@
 import styles from './StatCard.module.scss';
 import { Stat } from '@/types';
-import { formatNumber } from '@/utils/numberFormatter';
+import formatNumber from '@/utils/numberFormatter';
 import Image from 'next/image';
 import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
 import { useModalContext } from '@/context/Modal.context';
