@@ -14,10 +14,10 @@
 
   @media (min-width: 565px) {
     --instagram-color-gradient: linear-gradient(
-    to right,
-    hsl(37, 97%, 70%),
-    hsl(329, 70%, 58%)
-  );
+      to right,
+      hsl(37, 97%, 70%),
+      hsl(329, 70%, 58%)
+    );
   }
 
   /* LIGHT THEME */
@@ -42,7 +42,7 @@ html.dark {
   --background: hsl(230, 17%, 14%);
   --foreground: hsl(0, 0%, 100%);
   --foreground-pale: hsl(228, 34%, 66%);
-  --top-background-pattern: hsl(232, 19%, 15%);
+  --top-background-pattern: hsl(232, 19%, 17%);
   --thumbnail: hsl(228, 34%, 40%);
   --card: hsl(228, 28%, 20%);
   --card-hover: hsl(228, 28%, 25%);
@@ -84,7 +84,7 @@ html.dark {
 }
 
 .top-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

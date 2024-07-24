@@ -31,7 +31,7 @@
 
 - Creé archivos JSON en `src/data` basados en `content.tx` y definí los tipos en `src/types.ts`.
 
-- Según el `style-guide.md`, definí las variables de colores para los temas Light y Dark en `src/styles/global.css`.
+- Según el `style-guide.md`, definí las variables de colores para los temas Light y Dark en `src/styles/global.css`. Me pareció que el color "--top-backgound-pattern" no estaba bien traducido al modo Dark así que lo aclaré levemente (lo presentaría como una propuesta de cambio).
 
 ## Construcción
 
