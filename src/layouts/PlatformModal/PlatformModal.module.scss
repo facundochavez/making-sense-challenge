@@ -12,6 +12,25 @@
     padding: 30px;
     padding-bottom: 0px;
 
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 490px;
+      right: 28px;
+      width: 30px;
+      height: 70px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--top-background-pattern)
+      );
+
+      @media (min-width: 550px) {
+        bottom: 410px;
+        right: 48px;
+      }
+    }
+
     @media (min-width: 550px) {
       padding: 35px 50px;
       padding-bottom: 0px;
@@ -82,6 +101,22 @@
 
   main {
     padding: 0 30px 30px 30px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 28px;
+      width: 30px;
+      height: calc(100% - 40px);
+      background: linear-gradient(to right, transparent, var(--background));
+
+      @media (min-width: 550px) {
+        right: 48px;
+        height: calc(100% - 60px);
+      }
+    }
 
     @media (min-width: 550px) {
       padding: 0 50px 50px 50px;
