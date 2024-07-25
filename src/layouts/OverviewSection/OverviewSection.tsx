@@ -15,7 +15,7 @@ const DailyOverviewSection = () => {
       <h2
         style={{
           color:
-            theme === 'light' ? 'var(--foreground-pale)' : 'var(--foreground)',
+            theme === 'dark' ? 'var(--foreground)' : 'var(--foreground-pale)',
         }}
       >
         Overview - Today

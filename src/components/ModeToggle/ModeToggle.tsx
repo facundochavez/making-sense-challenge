@@ -1,4 +1,3 @@
-'use client';
 import { Switch } from 'antd';
 import styles from './ModeToggle.module.scss';
 import { useTheme } from 'next-themes';
